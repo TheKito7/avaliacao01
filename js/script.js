@@ -8,10 +8,10 @@ function enviar() {
     let empresa = document.getElementById("empresa").value
     let quantidade = document.getElementById("quantidade").value
 
-    // Calcula o valor a receber, sendo o 220 dado na atividade
+    // Calculando o valor a receber, sendo o 220 dado na atividade
     let valorReceber = quantidade * 220
 
-    // Variáveis da premiação
+
     let premio = 0
     let texto = ''
 
@@ -28,32 +28,33 @@ function enviar() {
         premio = valorReceber * 0.20
     }
 
-    // Calcula do valor final
+    // Calculando o valor final
     let valorFinal = valorReceber + premio
 
     let dados = { empresa: empresa, quantidade: quantidade, valorReceber: valorReceber, premio: premio, texto: texto,
         valorFinal: valorFinal
     }
 
-    // Adiciona o objeto ao array
-    empresas.push(dados);
+    // adicionndo ao array
+    empresas.push(dados)
 
-    // Atualiza a lista na tela
-    mostrar();
+   
+    mostrar()
 
-    // Limpa os campos do formulário
+    // limpando o formulario
     document.getElementById("empresa").value = ""
     document.getElementById("quantidade").value = ""
 }
 
-// Função responsável por exibir todas as empresas cadastradas
+// exibir todas as empresas cadastradas
 function mostrar() {
 
-    let saida = "";
+    let saida = ""
 
-    // Estrutura de repetição
+    // estrutura de repetição, for 
     for (let i = 0; i < empresas.length; i++) {
 
+        // contador
         saida += `
         <hr>
 
@@ -61,9 +62,9 @@ function mostrar() {
 
         <p>Quantidade Recolhida: ${empresas[i].quantidade} toneladas</p>
 
-        <p><strong>Valor a Receber:</strong> R$ ${empresas[i].valorReceber.toFixed(2)}</p>
+        <p>Valor a Receber: R$ ${empresas[i].valorReceber.toFixed(2)}</p>
 
-        <p><strong>Premiação:</strong>
+        <p>Premiação:
         ${empresas[i].premio > 0
             ? "R$ " + empresas[i].premio.toFixed(2)
             : empresas[i].texto}
@@ -73,6 +74,6 @@ function mostrar() {
         `
     }
 
-    // mostrar o resulado final 
+    // mostrando o resultado final na div resutado  
     document.getElementById("resultado").innerHTML = saida
 }
