@@ -16,7 +16,7 @@ formulario.addEventListener("submit", function(event) {
 const desc = document.getElementById("descricao").value 
 const qtd = document.getElementById("quantidade").value
 
-//cal 
+//calculo  
 const pValor = calcularValorResi(qtd)
 const tValor = calcularAdicional(qtd)
 
@@ -29,12 +29,12 @@ const tValor = calcularAdicional(qtd)
     lista.innerHTML = `
 
         <h3>
-            ${desc} - 
+            Empresa: ${desc} - 
         </h3>
 
-         Adicional: ${tValor}
+         Adicional: R$ ${tValor}
         <p>
-            : R$ ${pValor.toFixed(2).replace(".",",")}
+            R$ ${pValor.toFixed(2).replace(".",",")}
         </p>
 
 

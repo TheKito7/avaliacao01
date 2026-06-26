@@ -1,0 +1,15 @@
+#geral{
+    background-color: rgb(111, 111, 218);
+    text-align: center;
+    border-radius: 20px;
+}
+#resultado{
+    background-color: rgb(146, 142, 142);
+    border-radius: 20px;
+    
+}
+button{
+    border-radius: 15px;
+    
+
+}
