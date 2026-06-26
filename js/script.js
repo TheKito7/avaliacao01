@@ -17,7 +17,7 @@ function enviar() {
 
     // comparacao com dados da questao
     if (valorReceber <= 1000) {
-        texto = "Abaixo da Meta"
+        texto = "Nao atingiu a Meta"
     } else if (valorReceber <= 10000) {
         premio = valorReceber * 0.08
     } else if (valorReceber <= 15000) {
@@ -62,15 +62,15 @@ function mostrar() {
 
         <p>Quantidade Recolhida: ${empresas[i].quantidade} toneladas</p>
 
-        <p>Valor a Receber: R$ ${empresas[i].valorReceber.toFixed(2)}</p>
+        <p>Valor a Receber: R$ ${empresas[i].valorReceber.toFixed(2).replace(".",",")}</p>
 
-        <p>Premiação:
+        <p> Adicional:
         ${empresas[i].premio > 0
             ? "R$ " + empresas[i].premio.toFixed(2)
             : empresas[i].texto}
         </p>
 
-        <p>Valor Final: R$ ${empresas[i].valorFinal.toFixed(2)}</p>
+        <p>Valor Final: R$ ${empresas[i].valorFinal.toFixed(2).replace(".",",")}</p>
         `
     }
 
